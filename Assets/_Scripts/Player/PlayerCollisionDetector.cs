@@ -27,12 +27,6 @@ public class PlayerCollisionDetector : MonoBehaviour
         {
             if(!loseCanvas.activeInHierarchy)
                 loseCanvas.SetActive(true);
-
-            GetComponent<PlayerMovement>().enabled = false;
-
-            //TODO
-            //level End Canvas Kapat level sonu butonda
-            //Player Movement geri aç
         }
 
         if (collision.collider.CompareTag("Finish"))

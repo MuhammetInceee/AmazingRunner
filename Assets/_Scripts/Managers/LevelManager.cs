@@ -1,11 +1,10 @@
-using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> levelList = new List<GameObject>();
+    public List<GameObject> levelList = new List<GameObject>();
     
     [SerializeField] private TextMeshProUGUI currentLevelText;
     [SerializeField] private TextMeshProUGUI nextLevelText;

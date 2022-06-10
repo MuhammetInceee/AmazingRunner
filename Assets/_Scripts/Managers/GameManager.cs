@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI scoreText;
     
+    public GameObject tapToStart;
+
+    [SerializeField] private PlayerMovement playerMovement;
     private void Awake() => AwakeInit();
     private void Update() => UpdateInit();
     private void AwakeInit()
@@ -24,6 +27,20 @@ public class GameManager : MonoBehaviour
     private void UpdateInit()
     {
         scoreText.text = "Score : " + score;
+
+        PlayerMovementChecker();
+    }
+
+    private void PlayerMovementChecker()
+    {
+        if (tapToStart.activeInHierarchy || levelLoseCanvas.activeInHierarchy)
+        {
+            playerMovement.enabled = false;
+        }
+        else
+        {
+            playerMovement.enabled = true;
+        }
     }
     
 }
