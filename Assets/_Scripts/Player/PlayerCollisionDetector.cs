@@ -20,16 +20,25 @@ public class PlayerCollisionDetector : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        var loseCanvas = GameManager.Instance.levelLoseCanvas;
+        var winCanvas = GameManager.Instance.levelWinCanvas;
+        
         if (collision.collider.CompareTag("Obstacle"))
         {
-            if(!GameManager.Instance.levelEndCanvas.activeInHierarchy)
-                GameManager.Instance.levelEndCanvas.SetActive(true);
+            if(!loseCanvas.activeInHierarchy)
+                loseCanvas.SetActive(true);
 
             GetComponent<PlayerMovement>().enabled = false;
 
             //TODO
             //level End Canvas Kapat level sonu butonda
             //Player Movement geri aç
+        }
+
+        if (collision.collider.CompareTag("Finish"))
+        {
+            if (!winCanvas.activeInHierarchy)
+                winCanvas.SetActive(true);
         }
     }
 }
