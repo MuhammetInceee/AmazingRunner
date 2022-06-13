@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public GameObject tapToStart;
 
     [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private Animator playerAnim;
+    private static readonly int TimeToRun = Animator.StringToHash("timeToRun");
     private void Awake() => AwakeInit();
     private void Update() => UpdateInit();
     private void AwakeInit()
@@ -38,10 +40,14 @@ public class GameManager : MonoBehaviour
         if (tapToStart.activeInHierarchy || levelLoseCanvas.activeInHierarchy || levelWinCanvas.activeInHierarchy)
         {
             playerMovement.enabled = false;
+            playerAnim.SetBool(TimeToRun, false);
         }
         else
         {
             playerMovement.enabled = true;
+            playerAnim.enabled = true;
+            playerAnim.SetBool(TimeToRun, true);
+
         }
     }
 

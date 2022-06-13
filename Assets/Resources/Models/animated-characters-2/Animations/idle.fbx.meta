@@ -4,11 +4,8 @@ ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
-      74: -9165865403480842816
-    second: Root|0.Targeting Pose
-  - first:
-      74: 2910742486769232160
-    second: Root|Idle
+      74: -203655887218126122
+    second: mixamo.com
   externalObjects: {}
   materials:
     materialImportMode: 2

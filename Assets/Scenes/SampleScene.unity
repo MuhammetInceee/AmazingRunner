@@ -2465,6 +2465,7 @@ MonoBehaviour:
   scoreText: {fileID: 784996911}
   tapToStart: {fileID: 2079974839}
   playerMovement: {fileID: 3304712245107090247}
+  playerAnim: {fileID: 3304712245107090245}
 --- !u!1 &1634194585
 GameObject:
   m_ObjectHideFlags: 0
@@ -4400,7 +4401,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3304712245107090244}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 83e1a046244eabe4e9f2903e1d3387b5, type: 2}
   m_CullingMode: 0
