@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,19 +28,36 @@ public class GameManager : MonoBehaviour
     private void UpdateInit()
     {
         scoreText.text = "Score : " + score;
-
+        TapToStartControl();
         PlayerMovementChecker();
+        CollectableRotator();
     }
 
     private void PlayerMovementChecker()
     {
-        if (tapToStart.activeInHierarchy || levelLoseCanvas.activeInHierarchy)
+        if (tapToStart.activeInHierarchy || levelLoseCanvas.activeInHierarchy || levelWinCanvas.activeInHierarchy)
         {
             playerMovement.enabled = false;
         }
         else
         {
             playerMovement.enabled = true;
+        }
+    }
+
+    private void TapToStartControl()
+    {
+        if(!tapToStart.activeInHierarchy) return;
+
+        if (Input.GetMouseButtonDown(0))
+            tapToStart.SetActive(false);
+    }
+
+    private void CollectableRotator()
+    {
+        foreach (var elements in collectedObj)
+        {
+            elements.transform.Rotate(0,1,0);
         }
     }
     

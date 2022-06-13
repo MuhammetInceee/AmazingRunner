@@ -1,5 +1,5 @@
 using UnityEngine;
-
+[RequireComponent(typeof(BoxCollider), typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Player Speeds")] 
