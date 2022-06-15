@@ -23,6 +23,7 @@ public class PlayerCollisionDetector : MonoBehaviour
             var collectedList = GameManager.Instance.collectedObj;
 
             GameManager.Instance.score++;
+            GameManager.Instance.collectAudio.Play();
             if (collectedList.Contains(collidedGO))
             {
                 collectedList.Remove(collidedGO);
@@ -40,6 +41,8 @@ public class PlayerCollisionDetector : MonoBehaviour
         {
             if (!loseCanvas.activeInHierarchy)
                 loseCanvas.SetActive(true);
+            
+            GameManager.Instance.obstacleAudio.Play();
         }
 
         if (collision.collider.CompareTag("Finish"))
